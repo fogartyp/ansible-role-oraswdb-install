@@ -105,7 +105,7 @@
       content: "{{private_key_content}}"
       dest: "/tmp/ftp.pem"
       owner: "{{ oracle_user }}"
-      mode: 0600
+      mode: 600
     no_log: true
 
   - name: Check for installation binaries
