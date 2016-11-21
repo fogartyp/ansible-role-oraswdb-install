@@ -271,6 +271,6 @@
       state: absent
     with_items:
       - { path: "/tmp/ftp.pem"  }
-      - { path: "/u01/stage/12.1.0.2"  }
-      - { path: "/u01/stage/linuxamd64_12102_database_1of2.zip"  }
-      - { path: "/u01/stage/linuxamd64_12102_database_2of2.zip"  }
+#      - { path: "/u01/stage/12.1.0.2"  }
+#      - { path: "/u01/stage/linuxamd64_12102_database_1of2.zip"  }
+#      - { path: "/u01/stage/linuxamd64_12102_database_2of2.zip"  }
