@@ -105,7 +105,7 @@
       content: "{{private_key_content}}"
       dest: "/tmp/ftp.pem"
       owner: "{{ oracle_user }}"
-      mode: 600
+      mode: 0600
     no_log: true
 
   - name: Check for installation binaries
@@ -204,7 +204,7 @@
      - oradbinstall
 
   - name: Add listener.ora
-    template: src=listener.ora.j2 dest="{{ oracle_home_db_install }}/network/admin" owner="{{ oracle_user }}" group="{{ oracle_group }}" mode=775 backup=yes
+    template: src=listener.ora.j2 dest="{{ oracle_home_db_install }}/network/admin/listener.ora" owner="{{ oracle_user }}" group="{{ oracle_group }}" mode=775 backup=yes
     with_together:
      - "{{ oracle_databases }}"
      - "{{ checkdbswinstall.results }}"
