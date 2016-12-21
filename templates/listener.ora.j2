@@ -5,3 +5,12 @@ LISTENER =
       (ADDRESS = (PROTOCOL = TCP)(HOST = {{ oracle_hostname }})(PORT = 1521))
     )
   )
+
+SID_LIST_LISTENER =
+  (SID_LIST =
+    (SID_DESC =
+      (GLOBAL_DBNAME = {{ item.0.oracle_db_name }}.zafintest.com)
+      (ORACLE_HOME = {{ oracle_home_db_install }} )
+      (SID_NAME = {{ item.0.oracle_db_name }} )
+    )
+  )

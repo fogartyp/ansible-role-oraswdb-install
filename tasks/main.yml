@@ -203,11 +203,11 @@
     tags:
      - oradbinstall
 
-#  - name: Add listener.ora
-#    template: src=listener.ora.j2 dest="{{ oracle_home_db_install }}/network/admin/listener.ora" owner="{{ oracle_user }}" group="{{ oracle_group }}" mode=775 backup=yes
-#    with_together:
-#     - "{{ oracle_databases }}"
-#     - "{{ checkdbswinstall.results }}"
+  - name: Add listener.ora
+    template: src=listener.ora.j2 dest="{{ oracle_home_db_install }}/network/admin/listener.ora" owner="{{ oracle_user }}" group="{{ oracle_group }}" mode=775 backup=yes
+    with_together:
+      - "{{ oracle_databases }}"
+      - "{{ checkdbswinstall.results }}"
 
 #  - name: Run oraInstroot script after installation
 #    shell: "{{ oracle_inventory_loc }}/orainstRoot.sh"
